@@ -4,6 +4,7 @@ Kloob é uma aplicação que se propõe a conectar essas pessoas de um jeito fá
 
 ## Entregas 
 - (29/08) Entrega 1: [Proposta de projeto](https://docs.google.com/document/d/1vmhozo-g9e2dK-F3HEf1YIOUMnfYRQ03LDvhti_inWM/)
+- (28/09) Apresentação: [Google Docs] (https://docs.google.com/presentation/d/1rpgCwJQws0ClTYoSeUm7KizkUZ6llwC1ivRF9bX3HWU/edit#slide=id.p)
 
 ## Autores e Contribuidores
 - Arthur Freitas 
