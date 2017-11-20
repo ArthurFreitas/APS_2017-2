@@ -1,0 +1,117 @@
+<html lang="en">
+    <head>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){                
+                $('#submit-button').click(submit);            
+            });
+            
+            function submit(){
+
+                var confirmPassword = $('#confirm-password-input').val();
+                var password = $('#password-input').val();
+                var email = $('#email-input').val();
+                var username = $('#username-input').val();
+                
+                var userObject = {username:username, email:email, password:password, confirmPassword:confirmPassword};
+                
+                $.ajax({
+                    type:"POST",
+                    url:"http://localhost:3000/control/users",
+                    data: JSON.stringify(userObject),
+                    contentType: 'application/json',
+                    success: function(result){
+                        alert(result.message);
+                    }
+                });                
+            }            
+        </script>
+        
+        <style type="text/css">
+            #signup-container
+            {            
+                border: solid;
+                border-width: 1;
+                border-color: gray;
+                clear:both;
+                padding : 15px;
+                width:350px;
+                margin:auto;
+                margin-top:15px;
+                margin-bottom : 15px;
+            }
+            .col-sm-3
+            {
+                width:100%;
+            }
+            
+            #submit-button
+            {
+                float:right;
+                margin-right:15px;
+            }
+            #banner
+            {
+                height:170px;
+                overflow:hidden;
+            }            
+            img
+            {                
+                display:block;
+                margin:auto;
+                -ms-transform: translateY(-85px); /* IE 9 */
+                -webkit-transform: translateY(-85px); /* Chrome, Safari, Opera */
+                transform: translateY(-85px);
+            }
+        </style>
+	</head>
+    
+	<body>
+		<div class="container">			
+            <header>
+                <div id="banner">
+                    <img src="./res/kloob_banner.jpg"/>
+                </div>
+			</header>
+            
+			<div class="form-horizontal" id="signup-container" >
+				
+				<div class="form-group">
+					
+					<div class="col-sm-3">
+						<input id="username-input" placeholder="Username" class="form-control" type="text" name="username">
+					</div>
+				</div>
+				
+				<div class="form-group">
+					
+					<div class="col-sm-3">
+	  					<input id="email-input" placeholder="Email" class="form-control" type="text" name="email">
+	  				</div>
+	  			</div>
+	  			
+	  			<div class="form-group">
+	  				
+	  				<div class="col-sm-3">
+						<input id="password-input" placeholder="Password" class="form-control" type="text" name="password">
+					</div>
+				</div>
+
+                <div class="form-group">
+	  				
+	  				<div class="col-sm-3">
+						<input id="confirm-password-input" placeholder="Confirm Password" class="form-control" type="text" name="confirm-password">
+					</div>
+				</div>
+				
+				<div class="form-group">
+					<div>
+						<button type="button" id="submit-button"  class="btn btn-success">Submit</button>	
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
