@@ -1,7 +1,15 @@
 version: '2'
 services:
+  front-end:
+    build: ./front-end/
+    depends_on:
+     - control
+    ports:
+     - "8080:8080"
+      
   control:
     build: ./control/
     ports:
      - "3000:3000"
+
 
